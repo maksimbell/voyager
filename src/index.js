@@ -6,6 +6,7 @@ import {
     BrowserRouter
 } from 'react-router-dom';
 import "./App.scss";
+// import "leaflet/dist/leaflet.css";
 
 const el = document.getElementById("app");
 
