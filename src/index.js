@@ -13,6 +13,8 @@ const root = createRoot(el)
 
 root.render(
     <StrictMode>
-        <App />
+        <BrowserRouter>
+            <App />
+        </BrowserRouter>
     </StrictMode>
 )
