@@ -14,12 +14,7 @@ module.exports = {
             {
                 test: /\.(sa|sc|c)ss$/,
                 use: ["style-loader", "css-loader", "sass-loader"],
-            },
-            {
-                test: /\.(png|woff|woff2|eot|ttf|svg)$/,
-                loader: "url-loader",
-                options: { limit: false },
-            },
+            }
         ],
     },
     output: {
@@ -35,6 +30,11 @@ module.exports = {
         port: 3030,
     },
     resolve: {
-        extensions: ["*", ".js", ".jsx", ".scss"]
+        extensions: ["*", ".js", ".jsx", ".scss"],
+        alias: {
+            Components: path.resolve(__dirname, '/src/components'),
+            Pages: path.resolve(__dirname, '/src/pages'),
+            Assets: path.resolve(__dirname, '/src/assets'),
+        }
     }
 };
