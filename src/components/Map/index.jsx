@@ -8,7 +8,7 @@ import './style.scss';
 const Map = () => {
     return (
         <div>
-            <MapContainer center={[53.837824, 27.6430848]} zoom={16} scrollWheelZoom={true}>
+            <MapContainer className="Map" center={[53.837824, 27.6430848]} zoom={16} scrollWheelZoom={true}>
                 <TileLayer
                     attributionControl={false}
                     url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
