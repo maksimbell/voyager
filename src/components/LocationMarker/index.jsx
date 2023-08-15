@@ -19,7 +19,9 @@ const LocationMarker = () => {
     }, [map])
 
     return (position !== null ?
-        <Marker position={position} /> : null)
+        <Marker position={position}
+        // icon={}
+        /> : null)
 }
 
 export default LocationMarker
