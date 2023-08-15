@@ -14,6 +14,18 @@ module.exports = {
             {
                 test: /\.(sa|sc|c)ss$/,
                 use: ["style-loader", "css-loader", "sass-loader"],
+            },
+            {
+                test: /\.svg$/,
+                loader: 'svg-inline-loader'
+            },
+            {
+                test: /\.(png|jpe?g|gif)$/i,
+                use: [
+                    {
+                        loader: 'file-loader',
+                    },
+                ],
             }
         ],
     },
@@ -35,6 +47,7 @@ module.exports = {
             Components: path.resolve(__dirname, 'src/components'),
             Pages: path.resolve(__dirname, 'src/pages'),
             Assets: path.resolve(__dirname, 'src/assets'),
+            Helpers: path.resolve(__dirname, 'src/helpers'),
         }
     }
 };
