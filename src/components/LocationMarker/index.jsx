@@ -12,7 +12,6 @@ const LocationMarker = () => {
     useEffect(() => {
         map.locate().on('locationfound', (e) => {
             const pos = e.latlng
-            console.log(pos)
             setPosition(pos)
             const circle = L.circle(pos, radius, {fillOpacity: 0.05, opacity: 0.05})
             circle.addTo(map)
