@@ -10,14 +10,21 @@ const LocationMarker = () => {
     const map = useMap()
 
     useEffect(() => {
-        map.locate().on('locationfound', (e) => {
-            const pos = e.latlng
-            setPosition(pos)
-            const circle = L.circle(pos, radius, {fillOpacity: 0.05, opacity: 0.05})
-            circle.addTo(map)
-            map.flyTo(pos)
-        })
-    }, [map])
+        if (map) {
+            L.easyButton("fa-map-marker", () => {
+                map.locate().on('locationfound', function (e) {
+                    const pos = e.latlng
+                    setPosition(pos);
+                    const circle = L.circle(pos, radius, { fillOpacity: 0.1, opacity: 0.5 })
+                    console.log(circle)
+                    map.flyTo(pos, map.getZoom());
+                    circle.addTo(map)
+                });
+            }).addTo(map)
+            console.log(map)
+            //place into helpers
+        }
+    }, [])
 
     return (position !== null ?
         <Marker position={position}
