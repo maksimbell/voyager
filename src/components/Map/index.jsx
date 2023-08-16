@@ -3,6 +3,7 @@ import { MapContainer } from 'react-leaflet/MapContainer'
 import { TileLayer } from 'react-leaflet/TileLayer'
 import LocationMarker from 'Components/LocationMarker'
 import L, { Control } from 'leaflet';
+import SideBar from 'Components/SideBar'
 import "leaflet/dist/leaflet.css";
 import "leaflet-easybutton/src/easy-button.js";
 import "leaflet-easybutton/src/easy-button.css";
@@ -18,6 +19,7 @@ const Map = () => {
                 url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
             />
             <LocationMarker />
+            <SideBar />
         </MapContainer>
     )
 }
