@@ -5,42 +5,17 @@ import { iconPerson } from 'Helpers/iconPerson.js'
 import { requestPlaces } from 'Api/placesApi.js'
 import { CATEGORIES, MIN_RADIUS } from 'Constants'
 import { sidebar } from 'leaflet-sidebar'
+import { createButton } from 'Helpers/buttonLocation'
+import { createSidebar } from 'Helpers/sidebar'
 
 const LocationMarker = () => {
-    const radius = MIN_RADIUS
     const [position, setPosition] = useState(null)
 
     const map = useMap()
 
     useEffect(() => {
-        if (map) {
-            L.easyButton("fa-map-marker", () => {
-                map.locate().on('locationfound', function (e) {
-                    const pos = e.latlng
-                    setPosition(pos);
-                    const circle = L.circle(pos, radius, { fillOpacity: 0.1, opacity: 0.5 })
-                    map.flyTo(pos, map.getZoom());
-                    circle.addTo(map)
-
-                    // requestPlaces(CATEGORIES, pos, radius)
-                    //     .then(res => res.json())
-                    //     .then(places => {
-                    //         console.log(places)
-                    //     })
-
-                    var sidebar = L.control.sidebar('sidebar', {
-                        closeButton: true,
-                        position: 'left'
-                    });
-                    map.addControl(sidebar);
-
-                    setTimeout(function () {
-                        sidebar.toggle();
-                    }, 1000);
-                });
-            }).setPosition('bottomleft').addTo(map)
-            //place into helpers
-        }
+        createButton(map, setPosition)
+        createSidebar(map)
     }, [])
 
     return (position !== null ?
