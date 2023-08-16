@@ -16,12 +16,12 @@ const LocationMarker = () => {
     useEffect(() => {
         createButton(map, setPosition)
         createSidebar(map)
+        console.log(map)
     }, [])
 
     return (position !== null ?
         <Marker position={position}
-            icon={iconPerson}
-        /> : null)
+            icon={iconPerson} /> : null)
 }
 
 export default LocationMarker
