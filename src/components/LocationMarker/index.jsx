@@ -4,6 +4,7 @@ import L from 'leaflet'
 import { iconPerson } from 'Helpers/iconPerson.js'
 import { requestPlaces } from 'Api/placesApi.js'
 import { CATEGORIES, MIN_RADIUS } from 'Constants'
+import { sidebar } from 'leaflet-sidebar'
 
 const LocationMarker = () => {
     const radius = MIN_RADIUS
@@ -26,8 +27,18 @@ const LocationMarker = () => {
                     //     .then(places => {
                     //         console.log(places)
                     //     })
+
+                    var sidebar = L.control.sidebar('sidebar', {
+                        closeButton: true,
+                        position: 'left'
+                    });
+                    map.addControl(sidebar);
+
+                    setTimeout(function () {
+                        sidebar.toggle();
+                    }, 1000);
                 });
-            }).addTo(map)
+            }).setPosition('bottomleft').addTo(map)
             //place into helpers
         }
     }, [])
