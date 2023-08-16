@@ -51,6 +51,7 @@ module.exports = {
             Assets: path.resolve(__dirname, 'src/assets'),
             Helpers: path.resolve(__dirname, 'src/helpers'),
             Constants: path.resolve(__dirname, 'src/constants'),
+            Api: path.resolve(__dirname, 'src/api'),
         }
     }
 };

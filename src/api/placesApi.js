@@ -1,17 +1,12 @@
 import {
-    placesApiUrl
+    PLACES_API_URL
 } from 'Constants'
 
-export function requestPlaces(params) {
-    const {
-        latlng,
-        radius
-    } = params
+export function requestPlaces(categories, latlng, radius) {
 
-    return fetch(placesApiUrl +
-        '?categories=commercial,commercial.supermarket' +
-        '&filter=circle:27.652933364909813,53.907640406505436,5000' +
-        '&bias=proximity:27.652933364909813,53.907640406505436' +
-        '&limit=20' +
+    return fetch(PLACES_API_URL +
+        `?categories=${categories.join(',')}` +
+        `&filter=circle:${latlng.lng},${latlng.lat},${radius}` +
+        `&limit=20` +
         `&apiKey=${process.env.REACT_APP_PLACES_API_KEY}`)
 }

@@ -2,6 +2,8 @@ import React, { useEffect, useState } from 'react'
 import { Marker, useMap } from 'react-leaflet'
 import L from 'leaflet'
 import { iconPerson } from 'Helpers/iconPerson.js'
+import { requestPlaces } from 'Api/placesApi.js'
+import { CATEGORIES } from 'Constants'
 
 const LocationMarker = () => {
     const radius = 500
@@ -16,12 +18,16 @@ const LocationMarker = () => {
                     const pos = e.latlng
                     setPosition(pos);
                     const circle = L.circle(pos, radius, { fillOpacity: 0.1, opacity: 0.5 })
-                    console.log(circle)
                     map.flyTo(pos, map.getZoom());
                     circle.addTo(map)
+
+                    requestPlaces(CATEGORIES, pos, radius)
+                        .then(res => res.json())
+                        .then(places => {
+                            console.log(places)
+                        })
                 });
             }).addTo(map)
-            console.log(map)
             //place into helpers
         }
     }, [])

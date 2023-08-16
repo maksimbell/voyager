@@ -10,6 +10,7 @@ const App = () => {
             <div>
                 <Routes>
                     <Route exact path={'/'} element={<Map />}></Route>
+                    {/* page here */}
                 </Routes>
             </div>
         </ErrorBoundary>
