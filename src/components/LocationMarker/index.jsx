@@ -3,10 +3,10 @@ import { Marker, useMap } from 'react-leaflet'
 import L from 'leaflet'
 import { iconPerson } from 'Helpers/iconPerson.js'
 import { requestPlaces } from 'Api/placesApi.js'
-import { CATEGORIES } from 'Constants'
+import { CATEGORIES, MIN_RADIUS } from 'Constants'
 
 const LocationMarker = () => {
-    const radius = 500
+    const radius = MIN_RADIUS
     const [position, setPosition] = useState(null)
 
     const map = useMap()
@@ -21,11 +21,11 @@ const LocationMarker = () => {
                     map.flyTo(pos, map.getZoom());
                     circle.addTo(map)
 
-                    requestPlaces(CATEGORIES, pos, radius)
-                        .then(res => res.json())
-                        .then(places => {
-                            console.log(places)
-                        })
+                    // requestPlaces(CATEGORIES, pos, radius)
+                    //     .then(res => res.json())
+                    //     .then(places => {
+                    //         console.log(places)
+                    //     })
                 });
             }).addTo(map)
             //place into helpers

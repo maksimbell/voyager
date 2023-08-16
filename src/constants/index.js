@@ -3,3 +3,4 @@ export const CATEGORIES = ['natural', 'religion', 'entertainment',
     'building.industrial', 'rental.car', 'rental.bicycle, commercial.gas', 'commercial'
 ]
 export const PLACES_API_URL = 'https://api.geoapify.com/v2/places'
+export const MIN_RADIUS = 500
