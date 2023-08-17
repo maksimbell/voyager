@@ -5,7 +5,9 @@ import './style.scss'
 const SideBar = () => {
     return (
         <div id="sidebar" >
-            <ToggleButtonGroup />
+            <div>
+                <ToggleButtonGroup />
+            </div>
         </div>
     )
 }
