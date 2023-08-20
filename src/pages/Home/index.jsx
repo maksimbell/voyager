@@ -5,9 +5,10 @@ import SideBar from 'Components/SideBar'
 import LocationMarker from 'Components/LocationMarker'
 import {
     MIN_RADIUS,
-    CATEGORIES
+    CATEGORY_MAP
 } from 'Constants'
 import { requestPlaces } from 'Api/placesApi.js'
+import iconFactory from 'Helpers/iconFactory.js'
 import './style.scss'
 
 const Home = () => {
@@ -17,7 +18,7 @@ const Home = () => {
 
     useEffect(() => {
         if (position) {
-            requestPlaces(CATEGORIES, position, radius)
+            requestPlaces(Object.keys(CATEGORY_MAP), position, radius)
                 .then(res => res.json())
                 .then(collection => {
                     console.log(collection.features)
@@ -30,7 +31,10 @@ const Home = () => {
         const { geometry, properties } = item
         console.log(geometry, properties)
 
-        return <Marker position={geometry.coordinates.reverse()} key={properties.place_id} >
+        return <Marker position={geometry.coordinates.reverse()}
+            key={properties.place_id}
+            icon={iconFactory.create(properties.categories[0])}
+        >
             <Popup>
                 'Info'
             </Popup>
