@@ -12,7 +12,9 @@ const Home = () => {
     return (
         <div className="Home">
             <SideBar />
-            <Map />
+            <Map>
+                <LocationMarker position={position} setPosition={setPosition} />
+            </Map>
         </div>
     )
 }

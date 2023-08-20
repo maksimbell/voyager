@@ -8,15 +8,12 @@ import { sidebar } from 'leaflet-sidebar'
 import { createButton } from 'Helpers/buttonLocation'
 import { createSidebar } from 'Helpers/sidebar'
 
-const LocationMarker = () => {
-    const [position, setPosition] = useState(null)
+const LocationMarker = ({ position, setPosition }) => {
 
     const map = useMap()
 
     useEffect(() => {
         createButton(map, setPosition)
-        // createSidebar(map)
-        console.log(map)
     }, [])
 
     return (position !== null ?
