@@ -7,5 +7,5 @@ export const MIN_RADIUS = 500
 export const MAP_URL = 'https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png'
 export const MAP_CENTER = [53.837824, 27.6430848]
 export const MAP_ZOOM = 16
-// export const SIDEBAR_SECTIONS = ['search', 'favorite']
-export const SIDEBAR_SECTIONS = ['search']
+export const SIDEBAR_SECTIONS = ['search', 'favorite']
+// export const SIDEBAR_SECTIONS = ['search']

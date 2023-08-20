@@ -2,9 +2,7 @@ import React, { useEffect, useState } from 'react'
 import { MapContainer } from 'react-leaflet/MapContainer'
 import { TileLayer } from 'react-leaflet/TileLayer'
 import LocationMarker from 'Components/LocationMarker'
-import SideBar from 'Components/SideBar'
 import { MAP_URL, MAP_CENTER, MAP_ZOOM } from 'Constants'
-
 import "leaflet/dist/leaflet.css";
 import "leaflet-easybutton/src/easy-button.js";
 import "leaflet-easybutton/src/easy-button.css";
@@ -19,7 +17,6 @@ const Map = () => {
                 attributionControl={false}
                 url={MAP_URL} />
             <LocationMarker />
-            <SideBar />
         </MapContainer>
     )
 }

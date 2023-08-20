@@ -4,10 +4,8 @@ import './style.scss'
 
 const SideBar = () => {
     return (
-        <div id="sidebar" >
-            <div>
-                <ToggleButtonGroup />
-            </div>
+        <div className="Sidebar" >
+            <ToggleButtonGroup />
         </div>
     )
 }

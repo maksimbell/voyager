@@ -15,7 +15,7 @@ const LocationMarker = () => {
 
     useEffect(() => {
         createButton(map, setPosition)
-        createSidebar(map)
+        // createSidebar(map)
         console.log(map)
     }, [])
 

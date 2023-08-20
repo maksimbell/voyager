@@ -7,11 +7,9 @@ import Home from "Pages/Home";
 const App = () => {
     return (
         <ErrorBoundary>
-            <div>
-                <Routes>
-                    <Route exact path={'/'} element={<Home />}></Route>
-                </Routes>
-            </div>
+            <Routes>
+                <Route exact path={'/'} element={<Home />}></Route>
+            </Routes>
         </ErrorBoundary>
     )
 };

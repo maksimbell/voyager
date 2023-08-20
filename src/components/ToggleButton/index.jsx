@@ -5,8 +5,7 @@ import './style.scss'
 const ToggleButton = ({ title, toggleInfo, onToggle }) => {
     console.log(title, toggleInfo)
 
-    function handleToggle(e) {
-        e.preventDefault();
+    function handleToggle() {
         console.log('The link was clicked.');
         // if (toggleInfo != title)
         //     onToggle(title)
