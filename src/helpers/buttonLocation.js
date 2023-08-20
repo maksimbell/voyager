@@ -20,11 +20,3 @@ export function createButton(map, setPosition) {
         });
     }).setPosition('topleft').addTo(map)
 }
-
-
-
-// requestPlaces(CATEGORIES, pos, radius)
-//     .then(res => res.json())
-//     .then(places => {
-//         console.log(places)
-//     })
