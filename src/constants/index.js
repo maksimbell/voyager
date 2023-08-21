@@ -11,6 +11,10 @@ import bicycleRental from 'Assets/categories/rental-bicycle.png'
 import industrial from 'Assets/categories/industrial.png'
 import gasStation from 'Assets/categories/gas-station.png'
 
+import searchIcon from 'Assets/sidebar/search.png';
+import favoriteIcon from 'Assets/sidebar/favorite.png';
+import logoIcon from 'Assets/logo.png';
+
 
 // export const CATEGORIES = ['natural', 'religion', 'entertainment',
 //     'sport', 'adult', 'accommodation', 'entertainment.culture', 'building.historic', 'building.service',
@@ -22,8 +26,12 @@ export const RADIUS_DIF = 500
 export const MAP_URL = 'https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png'
 export const MAP_CENTER = [53.837824, 27.6430848]
 export const MAP_ZOOM = 16
-export const SIDEBAR_SECTIONS = ['search', 'favorite']
-// export const SIDEBAR_SECTIONS = ['search']
+export const LOGO_ICON = logoIcon
+
+export const SIDEBAR_SECTIONS_MAP = {
+    'search': searchIcon,
+    'favorite': favoriteIcon,
+}
 
 export const CATEGORY_MAP = {
     'natural': nature,
