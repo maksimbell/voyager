@@ -19,14 +19,14 @@ class IconFactory {
         if (CATEGORY_MAP[type])
             return new CustomIcon({
                 iconUrl: CATEGORY_MAP[type],
-                iconSize: [40, 40],
+                iconSize: [30, 30],
             })
 
 
         return new CustomIcon({
             iconUrl: img,
             shadowUrl: shadow,
-            iconSize: [20, 20],
+            iconSize: [15, 15],
         })
     }
 }
