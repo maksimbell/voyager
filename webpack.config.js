@@ -1,11 +1,11 @@
 const path = require("path");
 const HtmlWebpackPlugin = require("html-webpack-plugin");
 const Dotenv = require('dotenv-webpack');
+var webpack = require('webpack');
 
 module.exports = {
     module: {
-        rules: [
-            {
+        rules: [{
                 test: /\.(js|jsx)$/,
                 exclude: /node_modules/,
                 use: {
@@ -22,11 +22,9 @@ module.exports = {
             },
             {
                 test: /\.(png|jpe?g|gif)$/i,
-                use: [
-                    {
-                        loader: 'file-loader',
-                    },
-                ],
+                use: [{
+                    loader: 'file-loader',
+                }, ],
             }
         ],
     },
@@ -38,7 +36,8 @@ module.exports = {
         new HtmlWebpackPlugin({
             template: "src/index.html", // to import index.html file inside index.js
         }),
-        new Dotenv()
+        new Dotenv(),
+        new webpack.EnvironmentPlugin(JSON.parse(JSON.stringify(process.env))),
     ],
     devServer: {
         port: 3030,

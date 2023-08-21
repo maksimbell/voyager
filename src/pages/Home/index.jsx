@@ -33,8 +33,8 @@ const Home = () => {
 
         return <Marker position={geometry.coordinates.reverse()}
             key={properties.place_id}
-            icon={iconFactory.create(properties.categories.reverse().find(item => Object.keys(CATEGORY_MAP).includes(item)))}
-        >
+            icon={iconFactory.create(properties.categories.reverse()
+                .find(item => Object.keys(CATEGORY_MAP).includes(item)))}>
             <Popup>
                 'Info'
             </Popup>
