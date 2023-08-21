@@ -22,7 +22,6 @@ class IconFactory {
                 iconSize: [30, 30],
             })
 
-
         return new CustomIcon({
             iconUrl: img,
             shadowUrl: shadow,

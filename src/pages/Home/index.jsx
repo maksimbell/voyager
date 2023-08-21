@@ -35,9 +35,9 @@ const Home = () => {
             key={properties.place_id}
             icon={iconFactory.create(properties.categories.reverse()
                 .find(item => Object.keys(CATEGORY_MAP).includes(item)))}>
-            <Popup>
+            {/* <Popup>
                 'Info'
-            </Popup>
+            </Popup> */}
         </Marker>
     })
 

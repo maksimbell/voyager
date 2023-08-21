@@ -1,14 +1,9 @@
 import React from 'react'
 import {
-    Button, Box, Toolbar, IconButton,
-    Typography, Menu, Container, Avatar,
-    Tooltip, MenuItem, AppBar
-} from '@mui/material'
-import {
-    SIDEBAR_SECTIONS_MAP,
-    LOGO_ICON
+    SIDEBAR_SECTIONS_MAP
 } from 'Constants'
 import SidebarButton from 'Components/SidebarButton'
+import LogoIcon from 'Components/LogoIcon'
 import './style.scss'
 
 const SideBar = () => {
@@ -18,24 +13,7 @@ const SideBar = () => {
 
     return (
         <div className="Sidebar" >
-            {/* <AppBar  position="static">
-                <Container maxWidth="xl">
-                    <Toolbar disableGutters>
-
-                    </Toolbar>
-                </Container>
-            </AppBar> */}
-
-            <Box
-                component="img"
-                alt={"Logo"}
-                src={LOGO_ICON}
-                sx={{
-                    height: 30,
-                    width: 32,
-                    my: 3,
-                }}
-            />
+            <LogoIcon />
             {sideButtons}
         </div >
     )
