@@ -5,8 +5,11 @@
   background-color: rgb(255, 255, 255);
   min-height: 100%;
   margin: 0;
+  z-index: 4000;
+}
+
+.Sidebar__inner {
   display: flex;
   flex-direction: column;
   text-align: center;
-  z-index: 4000;
 }

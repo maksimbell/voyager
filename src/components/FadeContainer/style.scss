@@ -1,0 +1,15 @@
+.Fade-container {
+  position: absolute;
+  top: 0px;
+  left: 110px;
+  width: 360px;
+  border-left: 2px solid rgba(196, 196, 196, 1);
+  background-color: rgb(255, 255, 255);
+  min-height: 100%;
+  margin: 0;
+  z-index: 4000;
+}
+
+// .Fade-container div {
+//   z-index: 4001;
+// }
