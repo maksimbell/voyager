@@ -16,10 +16,6 @@ import favoriteIcon from 'Assets/sidebar/favorite.png';
 import logoIcon from 'Assets/logo.png';
 
 
-// export const CATEGORIES = ['natural', 'religion', 'entertainment',
-//     'sport', 'adult', 'accommodation', 'entertainment.culture', 'building.historic', 'building.service',
-//     'building.industrial', 'rental.car', 'rental.bicycle', 'commercial.gas', 'commercial'
-// ]
 export const PLACES_API_URL = 'https://api.geoapify.com/v2/places'
 export const MIN_RADIUS = 5000
 export const RADIUS_DIF = 500

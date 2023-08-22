@@ -2,15 +2,11 @@ import React from 'react'
 import {
     Button, Box
 } from '@mui/material'
+import './style.scss'
 
 const SidebarButton = ({ title, icon, onClick }) => {
     return (
-        <Button sx={{
-            height: 60,
-            width: 60,
-            mx: 'auto',
-            my: 1,
-        }} onClick={onClick}>
+        <Button className="Sidebar-button" onClick={onClick}>
             <Box
                 component="img"
                 alt={title}
