@@ -1,12 +1,12 @@
 import React, { useState } from 'react'
 import {
-    List, ListItemButton, ListItemIcon, ListItemText, ListItem, Checkbox
+    List, ListItemButton, ListItemIcon, ListItemText, ListItem, Checkbox, Box
 } from '@mui/material'
 import {
     MIN_RADIUS,
     CATEGORY_MAP
 } from 'Constants'
-// import CategoryElement from 'Components/CategoryElement'
+import './style.scss'
 
 const CategoryList = () => {
     const [checked, setChecked] = useState([])
@@ -22,6 +22,7 @@ const CategoryList = () => {
         }
 
         setChecked(newChecked);
+        console.log(newChecked)
     };
 
     const listContent = Object.keys(CATEGORY_MAP).map((item, index) => {
@@ -34,13 +35,19 @@ const CategoryList = () => {
                 button
                 onClick={handleToggle(index)}
             >
-                <ListItemIcon>
+                {/* <ListItemIcon>
                     <Checkbox
                         checked={checked.indexOf(index) !== -1}
                         tabIndex={-1}
                         disableRipple
                     />
-                </ListItemIcon>
+                </ListItemIcon> */}
+                <Box
+                    className="Category-item__icon"
+                    component="img"
+                    alt={item}
+                    src={CATEGORY_MAP[item]}
+                />
                 <ListItemText primary={name} />
             </ListItem>
         )

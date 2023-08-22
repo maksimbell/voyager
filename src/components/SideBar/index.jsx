@@ -9,6 +9,7 @@ import SidebarButton from 'Components/SidebarButton'
 import LogoIcon from 'Components/LogoIcon'
 import FadeContainer from 'Components/FadeContainer'
 import CategoryList from 'Components/CategoryList'
+import searchButtonIcon from 'Assets/sidebar/search-btn.png'
 import './style.scss'
 
 const SideBar = () => {
@@ -34,11 +35,15 @@ const SideBar = () => {
                 {sideButtons}
             </Box>
             <FadeContainer visible={visible}>
-                <div>
+                <div className="Sidebar-search">
                     <CategoryList />
-                    <TextField id="outlined-basic" variant="outlined" />
-                    <SidebarButton title={0}
-                        icon={SIDEBAR_SECTIONS_MAP[0]}
+                    <TextField id="outlined-basic"
+                        variant="outlined"
+                        label="Km" />
+                    <SidebarButton
+                        className="Sidebar-search__button"
+                        title={0}
+                        icon={searchButtonIcon}
                     // onClick={handleClick}
                     />
                 </div>
