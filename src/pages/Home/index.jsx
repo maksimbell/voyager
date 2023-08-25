@@ -14,7 +14,6 @@ import './style.scss'
 const Home = () => {
     const [places, setPlaces] = useState([])
     const [position, setPosition] = useState(null)
-    const [radius, setRadius] = useState(MIN_RADIUS)
 
     useEffect(() => {
         if (position) {
@@ -43,7 +42,7 @@ const Home = () => {
 
     return (
         <div className="Home">
-            <SideBar />
+            <SideBar handleQueryChange={null}/>
             <Map>
                 <LocationMarker position={position} setPosition={setPosition} />
                 {placesMarkers}

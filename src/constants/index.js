@@ -17,8 +17,9 @@ import logoIcon from 'Assets/logo.png';
 
 
 export const PLACES_API_URL = 'https://api.geoapify.com/v2/places'
-export const MIN_RADIUS = 5000
-export const RADIUS_DIF = 500
+export const MIN_RADIUS = 10
+export const MAX_RADIUS = 100
+export const RADIUS_DIF = 1
 export const MAP_URL = 'https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png'
 export const MAP_CENTER = [53.837824, 27.6430848]
 export const MAP_ZOOM = 16

@@ -4,10 +4,12 @@ import {
 } from '@mui/material'
 import './style.scss'
 
-const SidebarButton = ({ title, icon, onClick }) => {
+const SidebarButton = ({ title, icon, onClick, className }) => {
     return (
-        <Button className="Sidebar-button" onClick={onClick}>
-            <Box
+        <Button
+            className={className} 
+            onClick={onClick}>
+            <Box className="Sidebar-button"
                 component="img"
                 alt={title}
                 src={icon}
